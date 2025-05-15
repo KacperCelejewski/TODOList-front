@@ -60,7 +60,7 @@ todo-frontend/
 
 ## 📸 UI Preview
 
-![screenshot placeholder](Bildschirmfoto 2025-05-15 um 15.54.03.png)
+![screenshot placeholder](/'Bildschirmfoto 2025-05-15 um 15.54.03.png')
 
 ---
 
