@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+    --primary-color: #4caf50;
+    --primary-color-dark: #388e3c;
+    --bg-color: #f9fafb;
+    --card-bg: #ffffff;
+    --text-primary: #222222;
+    --text-secondary: #555555;
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
+    --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 3rem 1rem;
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 2.75rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 1.2px;
+    color: var(--text-primary);
+    user-select: none;
+    text-align: center;
+    width: 100%;
+    max-width: 480px;
+}
+
+form {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    background: var(--card-bg);
+    padding: 1.5rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 20px var(--shadow-light);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    min-width: 200px;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    border: 1.5px solid #ddd;
+    font-size: 1.1rem;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+    font-weight: 400;
+    color: var(--text-primary);
+    background-color: #fff;
+    outline-offset: 2px;
+}
+
+input[type="text"]::placeholder {
+    color: #bbb;
+    font-weight: 400;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px var(--primary-color);
+    outline: none;
+    background-color: #fafafa;
+}
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0 1.8rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+    box-shadow: 0 4px 12px var(--primary-color-dark);
+    user-select: none;
+    min-width: 120px;
+    height: 42px;
+    align-self: center;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    background-color: var(--primary-color-dark);
+    box-shadow: 0 6px 18px var(--primary-color-dark);
+    outline: none;
+}
+
+.Cards {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+article.card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.75rem 2rem;
+    box-shadow: 0 6px 18px var(--shadow-medium);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    user-select: none;
+    position: relative;
+}
+
+article.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px var(--shadow-medium);
+}
+
+article.card header.task-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+article.card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    flex: 1;
+    margin: 0;
+    word-break: break-word;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    position: relative;
+    user-select: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    position: relative;
+    padding-left: 34px;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-weight: 600;
+    user-select: none;
+    transition: color var(--transition-speed);
+}
+
+label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    border: 2.5px solid #ccc;
+    border-radius: 50%;
+    background: white;
+    transition: border-color var(--transition-speed), background-color var(--transition-speed);
+    box-sizing: border-box;
+    box-shadow: inset 0 0 5px #f0f0f0;
+}
+
+input[type="checkbox"]:checked+label {
+    color: var(--primary-color-dark);
+}
+
+input[type="checkbox"]:checked+label::before {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px var(--primary-color);
+}
+
+input[type="checkbox"]:checked+label::after {
+    content: "✓";
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: white;
+    font-weight: 700;
+    user-select: none;
+}
+
+article.card p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0;
+    white-space: pre-wrap;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+article.card button.delete-btn {
+    align-self: flex-start;
+    background-color: transparent;
+    color: #e74c3c;
+    border: 2px solid #e74c3c;
+    padding: 0.4rem 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), color var(--transition-speed),
+        box-shadow var(--transition-speed);
+    user-select: none;
+    box-shadow: none;
+    margin-top: 0.5rem;
+}
+
+article.card button.delete-btn:hover,
+article.card button.delete-btn:focus {
+    background-color: #e74c3c;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.6);
+    outline: none;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 2rem 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    input[type="text"] {
+        min-width: 100%;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 0.85rem 0;
+        min-width: unset;
+    }
+
+    .Cards {
+        max-width: 100%;
+    }
+
+    article.card {
+        padding: 1.25rem 1.5rem;
+    }
+}

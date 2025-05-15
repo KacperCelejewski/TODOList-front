@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TO DO LIST</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h1>TO DO LIST</h1>
+
+    <form id="task-form" aria-label="Add new task">
+        <input type="text" id="task-title" name="task-title" placeholder="Task Title" required aria-required="true" />
+        <input type="text" id="task-content" name="task-content" placeholder="Task Details" required
+            aria-required="true" />
+        <button type="submit">Add Task</button>
+    </form>
+
+    <section class="Cards" aria-live="polite" aria-label="List of tasks"></section>
+
+    <script src="script.js"></script>
+</body>
