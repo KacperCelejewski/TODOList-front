@@ -3,7 +3,7 @@
 This is the **frontend** for a To-Do List application built using **Vanilla JavaScript**, **HTML**, and **CSS**.  
 It communicates with a separate **Java Spring Boot backend API** to perform CRUD operations on tasks.
 
-👉 Backend repo: [https://github.com/yourusername/todo-backend](https://github.com/KacperCelejewski/TODOList)
+👉 Backend repo: [https://github.com/KacperCelejewski/todo-backend](https://github.com/KacperCelejewski/TODOList)
 
 ---
 
@@ -87,5 +87,3 @@ This project is licensed under the MIT License.
 ## 👨‍💻 Author
 
 [Kacper Celejewski]  
-Frontend Repo: [todo-frontend](https://github.com/yourusername/todo-frontend)  
-Backend Repo: [todo-backend](https://github.com/yourusername/todo-backend)
